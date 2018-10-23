@@ -2,7 +2,7 @@
 
 import PropTypes from "prop-types";
 import React from "react";
-import { StyleSheet, Text, View, ViewPropTypes } from "react-native";
+import { StyleSheet, Text, View, ViewPropTypes, Platform } from "react-native";
 
 import moment from "moment";
 
@@ -36,7 +36,10 @@ const containerStyle = {
   marginBottom: 5
 };
 
+const BaseFont = Platform.OS === "ios" ? "Prompt" : "prompt";
+
 const textStyle = {
+  fontFamily: BaseFont,
   fontSize: 10,
   backgroundColor: "transparent",
   textAlign: "right"
